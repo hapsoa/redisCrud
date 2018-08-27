@@ -62,6 +62,18 @@ router.delete('/user', (req, res) => {
     let key = req.body.name;
     let value = JSON.stringify(req.body);
 
+
+    client.get(key, (err, val) => {
+        if (_.isNil(val)) {
+            res.send('Fail: User Not Found.');
+        }
+        else {
+            client.del(key);
+            res.send('Success: Delete User.');
+        }
+    });
+
+
 });
 
 
