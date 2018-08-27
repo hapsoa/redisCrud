@@ -3,5 +3,38 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/crud.css')
+    script(src="/babel-polyfill/dist/polyfill.js")
+    script(src="https://code.jquery.com/jquery-3.3.1.js",
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=",
+    crossorigin="anonymous")
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.min.js')
+
   body
-    block content
+    .main-content
+    .button-content
+      .button#search search
+      .button#add add
+      .button#delete delete
+      .button#edit edit
+    .input-content.search
+      input(key='name', placeholder='name')
+      .click-button
+    .input-content.add.display-none
+      input(key='name', placeholder='name')
+      input(key='hobby', placeholder='hobby')
+      input(key='age', placeholder='age')
+      input(key='food', placeholder='food')
+      .click-button
+    .input-content.delete.display-none
+      input(key='name', placeholder='name')
+      .click-button
+    .input-content.edit.display-none
+      input(key='name', placeholder='name')
+      input(key='hobby', placeholder='hobby')
+      input(key='age', placeholder='age')
+      input(key='food', placeholder='food')
+      .click-button
+    .result-content
+
+  script(src='/javascript/crud.js')

@@ -9,6 +9,10 @@ router.get('/', function (req, res, next) {
     res.render('index', {title: 'API SERVER'});
 });
 
+router.get('/test', function (req, res, next) {
+  res.render('layout', {title: 'API SERVER'});
+});
+
 router.post('/user', (req, res) => {
 
     let key = req.body.name;
