@@ -9,39 +9,70 @@ body {
   display: none !important; }
 
 .main-content {
+  overflow-y: auto;
   width: 100%;
   height: 200px;
-  background: #00B7FF; }
+  border-bottom: 2px solid #00B7FF;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 16px; }
+  .main-content .card {
+    width: 180px;
+    height: 110px;
+    margin: 8px 16px;
+    background: #3498DB;
+    display: flex;
+    color: white; }
+    .main-content .card .photo-content {
+      width: 70px;
+      height: 80px;
+      position: relative; }
+      .main-content .card .photo-content i {
+        position: absolute;
+        left: 16px;
+        text-align: center;
+        line-height: 110px;
+        font-size: 40px;
+        margin: auto; }
+    .main-content .card .profile-content {
+      width: 110px;
+      height: 110px;
+      padding: 14px; }
+      .main-content .card .profile-content .name {
+        font-weight: 500;
+        width: 60px;
+        font-size: 15px;
+        border-bottom: 1px solid #ccc; }
+      .main-content .card .profile-content .text {
+        padding: 2px 0px; }
 
 .button-content {
   width: 100%;
   height: 100px;
-  background: yellow;
+  border-bottom: 2px solid #00B7FF;
   display: flex;
   justify-content: center;
   align-items: center; }
-  .button-content .button {
-    width: 80px;
-    height: 80px;
-    margin: 0 10px;
-    background: red; }
 
 .input-content {
   width: 100%;
   height: 100px;
-  background: green;
+  border-bottom: 2px solid #00B7FF;
   display: flex;
   justify-content: center;
   align-items: center; }
   .input-content input {
     margin: 0 20px;
-    height: 30px; }
-  .input-content .click-button {
-    width: 30px;
     height: 30px;
-    background: mediumpurple;
-    margin: auto 0;
-    text-align: center;
-    line-height: 30px; }
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ccc; }
+  .input-content .click-button {
+    padding: 4px 8px;
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+    font-size: 14px;
+    margin: auto 0; }
 
 /*# sourceMappingURL=crud.css.map */

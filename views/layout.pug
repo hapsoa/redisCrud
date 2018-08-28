@@ -4,37 +4,62 @@ html
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/crud.css')
+    link(rel='stylesheet', href='/stylesheets/crud.button.css')
     script(src="/babel-polyfill/dist/polyfill.js")
     script(src="https://code.jquery.com/jquery-3.3.1.js",
     integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=",
     crossorigin="anonymous")
+    meta(name="author" content="www.twitter.com/cheeriottis")
+    link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.1/css/all.css"
+    integrity="sha384-O8whS3fhG2OnA5Kas0Y9l3cfpmYjapjI0E4theH4iuMD+pLhbf6JI0jIMfYcK3yZ" crossorigin="anonymous")
+
+    link(href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css')
     script(src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.min.js')
 
   body
     .main-content
+      .card.blue
+        .photo-content
+          i.fas.fa-user-circle
+        .profile-content
+          .name 이수정
+          .text 22
+          .text 음악감상
+          .text 파스타
+      .card
+        .photo-content
+          i.fas.fa-user-circle
+        .profile-content
+          .name 이수정
+          .text 22
+          .text 음악감상
+          .text 파스타
     .button-content
-      .button#search search
-      .button#add add
-      .button#delete delete
-      .button#edit edit
+
+      a.action-button.shadow.animate.blue.button(href='#')#search search
+      a.action-button.shadow.animate.red.button(href='#')#add add
+      a.action-button.shadow.animate.green.button(href='#')#delete delete
+      a.action-button.shadow.animate.yellow.button(href='#')#edit edit
     .input-content.search
       input(key='name', placeholder='name')
-      .click-button
+      a.action-button.shadow.animate.purple.click-button(href='#') search
     .input-content.add.display-none
       input(key='name', placeholder='name')
       input(key='hobby', placeholder='hobby')
       input(key='age', placeholder='age')
       input(key='food', placeholder='food')
-      .click-button
-    .input-content.delete.display-none
+      a.action-button.shadow.animate.purple.click-button(href='#') add
+  .input-content.delete.display-none
       input(key='name', placeholder='name')
-      .click-button
-    .input-content.edit.display-none
+      a.action-button.shadow.animate.purple.click-button(href='#') delete
+
+  .input-content.edit.display-none
       input(key='name', placeholder='name')
       input(key='hobby', placeholder='hobby')
       input(key='age', placeholder='age')
       input(key='food', placeholder='food')
-      .click-button
-    .result-content
+      a.action-button.shadow.animate.purple.click-button(href='#') edit
+
+  .result-content
 
   script(src='/javascript/crud.js')
