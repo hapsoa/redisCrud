@@ -42,6 +42,33 @@ router.get('/user/:name', (req, res) => {
 });
 
 
+
+router.get('/users', function (req, res) {
+
+    client.keys('*', async function (err, keys) {
+        const users = {};
+
+        if (err) return console.log(err);
+        if (keys) {
+            for (let i = 0; i < keys.length; i++) {
+                users[`${keys[i]}`] = await makePromise(keys[i]);
+            }
+            console.log('users',users);
+            res.json(users);
+        }
+    });
+});
+
+const makePromise = (key) => {
+    return new Promise((resolve, reject) => {
+        client.get(key, function (error, value) {
+            if (error) return console.log(error);
+
+            resolve(value);
+        });
+    });
+};
+
 // 덮어 쓰기
 router.put('/user', (req, res) => {
 
