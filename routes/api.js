@@ -48,24 +48,25 @@ router.put('/user', (req, res) => {
     let key = req.body.name;
     let value = JSON.stringify(req.body);
 
+    console.log(key);
+    console.log(value);
+
     client.get(key, (err, val) => {
         if (_.isNil(val)) {
             res.send('Fail: User Not Found.');
         }
         else {
             client.set(key, value);
-            res.send('Success: Add User.');
+            res.send('Success: Edit User.');
         }
     });
 });
 
 
 // 삭제하기
-router.delete('/user', (req, res) => {
+router.delete('/user/:name', (req, res) => {
 
-    let key = req.body.name;
-    let value = JSON.stringify(req.body);
-
+    let key = req.params.name;
 
     client.get(key, (err, val) => {
         if (_.isNil(val)) {
@@ -77,8 +78,6 @@ router.delete('/user', (req, res) => {
         }
     });
 
-
 });
-
 
 module.exports = router;
