@@ -37,7 +37,7 @@ router.get('/user/:name', (req, res) => {
     client.get(req.params.name, (err, val) => {
         // err 처리 -> 에러는 아마 404 이런 거 말하는 것 같음
         // value is null when the key is missing
-        _.isNil(val) ? res.send('Fail: User Not Found') : res.send(val);
+        _.isNil(val) ? res.send('Fail: User Not Found') : res.json(val);
     });
 });
 
