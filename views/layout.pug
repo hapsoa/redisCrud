@@ -18,14 +18,14 @@ html
 
   body
     .main-content
-      .card.blue
+      .card
         .photo-content
           i.fas.fa-user-circle
         .profile-content
           .name 이수정
-          .text 22
-          .text 음악감상
-          .text 파스타
+          .text.age 22
+          .text.hobby 음악감상
+          .text.food 파스타
       .card
         .photo-content
           i.fas.fa-user-circle
@@ -35,7 +35,6 @@ html
           .text 음악감상
           .text 파스타
     .button-content
-
       a.action-button.shadow.animate.blue.button(href='#')#search search
       a.action-button.shadow.animate.red.button(href='#')#add add
       a.action-button.shadow.animate.green.button(href='#')#delete delete
@@ -62,4 +61,6 @@ html
 
   .result-content
 
+  script(src='/search.js')
   script(src='/javascript/crud.js')
+
