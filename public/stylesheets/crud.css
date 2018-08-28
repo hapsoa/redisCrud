@@ -8,6 +8,9 @@ body {
 .display-none {
   display: none !important; }
 
+.background-red {
+  background: red !important; }
+
 .main-content {
   overflow-y: auto;
   width: 100%;
