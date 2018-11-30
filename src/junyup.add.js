@@ -22,9 +22,9 @@ const users = {};
 $.get('/a/users', function(users){
   _.forEach(users, user => {
     users[user.name] = user;
-
+    
     //TODO Create Element
-    user.ele = new Element(user);
+    Element(user);
   });
 })
 
@@ -32,7 +32,7 @@ $.get('/a/user/hyunsik', function(u)=>{
   // 수정을 해줘라 덮어쓰지말고.
 })
 
-const Element = function Element(user){
+function Element(user){
   user.ele = $(template);
   user.show = () => item.ele.addClass('show');
   user.hide = () => item.ele.addClass('hide');
